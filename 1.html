@@ -1,0 +1,441 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Sky直播下载</title>
+    <link rel="stylesheet" href="static/css/swiper.min.css">
+    <link rel="stylesheet" href="static/css/m.css">
+    <script src="static/js/flexible.js"></script>
+
+    <script src="static/js/jquery-3.4.1.min.js"></script>
+
+    <!--sharetrace-->
+    <!--<script src="https://512dl.oss-accelerate.aliyuncs.com/jquery-3.6.0.js" type="text/javascript"></script><script src="https://512dl.oss-accelerate.aliyuncs.com/tinstall_inner_123_a.js" type="text/javascript"></script>-->
+    <script type="text/javascript" src="static/js/sharetrace.min.js"></script>
+    <!--<script type="text/javascript" src="//www.shareinstall.com.cn/js/page/jshareinstall.min.js"></script>-->
+
+    <!--sharetrace-->
+    <style>
+        body {
+            position: relative;
+        }
+
+        .code {
+            z-index: 10;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff url('static/image/pc_banner.jpg') no-repeat center center;
+            background-size: 100%;
+            z-index: 1000;
+        }
+
+        #qrcode {
+            box-sizing: border-box;
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            top: 50%;
+            left: 50%;
+            margin: -100px 0 0 -100px;
+            padding: 5px;
+            border-radius: 3px;
+        }
+
+        #qrcode canvas {
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        #qrcode img {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            top: 75px;
+            left: 75px;
+        }
+    </style>
+</head>
+<body class="indexPages">
+<!--统计器-->
+
+
+<section class="live">
+    <div class="titH">
+        正在直播
+        <div class="status">
+            <div class="zb_load">
+                <span class="z1"></span>
+                <span class="z2"></span>
+                <span class="z3"></span>
+                <span class="z4"></span>
+            </div>
+        </div>
+    </div>
+    <ul>
+        <li>
+            <a class="downloadButton" href="javascript:void(0);">
+                    <span class="pic">
+                        <img src="static/picture/01.jpg">
+                        <span class="amount ">1373</span>
+                        <span class="tag tag1"></span>
+                        <span class="distance">0.4km</span>
+                        <div class="userTagInfo">
+                            <div class="trueuser_icon"></div>
+                            <div class=""></div>
+                        </div>
+                    </span>
+                <div class="des">
+                    <p class="name">若熙<span>20岁</span></p>
+                    <p>女神等你来撩</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a class="downloadButton" href="javascript:void(0);">
+                    <span class="pic">
+                        <img src="static/picture/02.jpg">
+                        <span class="amount ">2607</span>
+                        <span class="tag tag2"></span>
+                        <span class="distance">1.4km</span>
+                        <div class="userTagInfo">
+                            <div class="trueuser_icon"></div>
+                            <div class=""></div>
+                        </div>
+                    </span>
+                <div class="des">
+                    <p class="name">梦楠<span>23岁</span></p>
+                    <p>骚年~能忍得住我舌头的挑逗吗</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a class="downloadButton" href="javascript:void(0);">
+                    <span class="pic">
+                        <img src="static/picture/03.jpg">
+                        <span class="amount">1792</span>
+                        <span class="tag tag3"></span>
+                        <span class="distance">2.3km</span>
+                        <div class="userTagInfo">
+                            <div class="trueuser_icon"></div>
+                            <div class=""></div>
+                        </div>
+                    </span>
+                <div class="des">
+                    <p class="name">Yumi<span>24岁</span></p>
+                    <p>Yumi给你温暖，抱抱我</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a class="downloadButton" href="javascript:void(0);">
+                    <span class="pic">
+                        <img src="static/picture/04.jpg">
+                        <span class="amount ">1473</span>
+                        <span class="tag tag1"></span>
+                        <span class="distance">3.4km</span>
+                        <div class="userTagInfo">
+                            <div class="trueuser_icon"></div>
+                            <div class=""></div>
+                        </div>
+                    </span>
+                <div class="des">
+                    <p class="name">艾小青<span>23岁</span></p>
+                    <p>喜欢直接的哥哥，摸摸大…</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a class="downloadButton" href="javascript:void(0);">
+                    <span class="pic">
+                        <img src="static/picture/05.jpg">
+                        <span class="amount ">2991</span>
+                        <span class="tag tag3"></span>
+                        <span class="distance">2.5km</span>
+                        <div class="userTagInfo">
+                            <div class="trueuser_icon"></div>
+                            <div class=""></div>
+                        </div>
+                    </span>
+                <div class="des">
+                    <p class="name">谭晓晓<span>21岁</span></p>
+                    <p>哥哥轻点，我怕疼~</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a class="downloadButton" href="javascript:void(0);">
+                    <span class="pic">
+                        <img src="static/picture/06.jpg">
+                        <span class="amount ">2495</span>
+                        <span class="tag tag1"></span>
+                        <span class="distance">3.2km</span>
+                        <div class="userTagInfo">
+                            <div class="trueuser_icon"></div>
+                            <div class=""></div>
+                        </div>
+                    </span>
+                <div class="des">
+                    <p class="name">朱可儿<span>22岁</span></p>
+                    <p>清纯嫩模，求哥哥关爱。</p>
+                </div>
+            </a>
+        </li>
+
+    </ul>
+</section>
+<section class="live">
+    <div class="titH">
+        听你指挥
+        <div class="status">
+            <div class="zb_load">
+                <span class="z1"></span>
+                <span class="z2"></span>
+                <span class="z3"></span>
+                <span class="z4"></span>
+            </div>
+        </div>
+    </div>
+    <ul>
+        <li>
+            <a class="downloadButton" href="javascript:void(0);">
+                    <span class="pic">
+                        <img src="static/picture/16.jpg">
+                        <span class="amount ">11373</span>
+                        <span class="tag tag1"></span>
+                        <span class="distance">10.5km</span>
+                        <div class="userTagInfo">
+                            <div class="trueuser_icon"></div>
+                            <div class=""></div>
+                        </div>
+                    </span>
+                <div class="des">
+                    <p class="name">蓝雨儿<span>21岁</span></p>
+                    <p>身体很嫩,可以指挥</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a class="downloadButton" href="javascript:void(0);">
+                    <span class="pic">
+                        <img src="static/picture/17.jpg">
+                        <span class="amount ">22607</span>
+                        <span class="tag tag2"></span>
+                        <span class="distance">102.4km</span>
+                        <div class="userTagInfo">
+                            <div class="trueuser_icon"></div>
+                            <div class=""></div>
+                        </div>
+                    </span>
+                <div class="des">
+                    <p class="name">韵晴<span>28岁</span></p>
+                    <p>少妇~难耐,大度,饥渴</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a class="downloadButton" href="javascript:void(0);">
+                    <span class="pic">
+                        <img src="static/picture/18.jpg">
+                        <span class="amount">16795</span>
+                        <span class="tag tag3"></span>
+                        <span class="distance">9.3km</span>
+                        <div class="userTagInfo">
+                            <div class="trueuser_icon"></div>
+                            <div class=""></div>
+                        </div>
+                    </span>
+                <div class="des">
+                    <p class="name">蜜桃<span>24岁</span></p>
+                    <p>我这里抹了蜜,你想尝尝吗?</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a class="downloadButton" href="javascript:void(0);">
+                    <span class="pic">
+                        <img src="static/picture/19.jpg">
+                        <span class="amount ">19273</span>
+                        <span class="tag tag1"></span>
+                        <span class="distance">533.4km</span>
+                        <div class="userTagInfo">
+                            <div class="trueuser_icon"></div>
+                            <div class=""></div>
+                        </div>
+                    </span>
+                <div class="des">
+                    <p class="name">刘嫂<span>26岁</span></p>
+                    <p>和洪哥一起演绎…各种姿势讲解</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a class="downloadButton" href="javascript:void(0);">
+                    <span class="pic">
+                        <img src="static/picture/20.jpg">
+                        <span class="amount ">23211</span>
+                        <span class="tag tag3"></span>
+                        <span class="distance">32.1km</span>
+                        <div class="userTagInfo">
+                            <div class="trueuser_icon"></div>
+                            <div class=""></div>
+                        </div>
+                    </span>
+                <div class="des">
+                    <p class="name">小妮<span>21岁</span></p>
+                    <p>想看哪里看哪里,有缘的可以约</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a class="downloadButton" href="javascript:void(0);">
+                    <span class="pic">
+                        <img src="static/picture/21.jpg">
+                        <span class="amount ">32495</span>
+                        <span class="tag tag1"></span>
+                        <span class="distance">37.8km</span>
+                        <div class="userTagInfo">
+                            <div class="trueuser_icon"></div>
+                            <div class=""></div>
+                        </div>
+                    </span>
+                <div class="des">
+                    <p class="name">小文<span>27岁</span></p>
+                    <p>合适的男粉丝可以一起表演</p>
+                </div>
+            </a>
+        </li>
+
+    </ul>
+</section>
+
+<section class="goddess">
+    <div class="titH">
+        <label class="appName">女神</label>
+        <p><span>性感 高清美女</span></p>
+    </div>
+    <ul>
+        <li>
+            <a class="downloadButton" href="javascript:void(0);">
+                    <span class="pic">
+                        <img src="static/picture/07.jpg">
+                        <span class="amount">2283</span>
+                    </span>
+                <p>波涛汹涌 BOBO</p>
+            </a>
+        </li>
+        <li>
+            <a class="downloadButton" href="javascript:void(0);">
+                    <span class="pic">
+                        <img src="static/picture/08.jpg">
+                        <span class="amount">2923</span>
+                    </span>
+                <p>妩媚妖娆 求深入了解~</p>
+            </a>
+        </li>
+        <li>
+            <a class="downloadButton" href="javascript:void(0);">
+                    <span class="pic">
+                        <img src="static/picture/09.jpg">
+                        <span class="amount">1837</span>
+                    </span>
+                <p>激情四射</p>
+            </a>
+        </li>
+        <li>
+            <a class="downloadButton" href="javascript:void(0);">
+                    <span class="pic">
+                        <img src="static/picture/10.jpg">
+                        <span class="amount">1486</span>
+                    </span>
+                <p>巨波荡漾~欢迎来撩~</p>
+            </a>
+        </li>
+    </ul>
+</section>
+
+<a class="more js_pop downloadButton" href="javascript:void(0);">更多女神</a>
+
+<section class="comment">
+    <div class="titH">热门评论</div>
+    <ul>
+        <li>
+            <a class="clearfix down">
+                    <span class="adver">
+                        <img src="static/picture/11.jpg">
+                    </span>
+                <div class="tit">
+                    <h5>爷很吊</h5>
+                    <span>30秒前</span>
+                </div>
+                <p class="des">刚开始还不信，结果打开发现里面的主播确实漂亮~</p>
+            </a>
+        </li>
+        <li>
+            <a class="clearfix down">
+                    <span class="adver">
+                        <img src="static/picture/12.jpg">
+                    </span>
+                <div class="tit">
+                    <h5>小智智~</h5>
+                    <span>45秒前</span>
+                </div>
+                <p class="des">已经约到了好几个妹子了，身材颜值真的棒！</p>
+            </a>
+        </li>
+        <li>
+            <a class="clearfix down">
+                    <span class="adver">
+                        <img src="static/picture/13.jpg">
+                    </span>
+                <div class="tit">
+                    <h5>夜袭寡妇村</h5>
+                    <span>55秒前</span>
+                </div>
+                <p class="des">每天都看大秀，搞得我都要买营养快线补补了。</p>
+            </a>
+        </li>
+        <li>
+            <a class="clearfix down">
+                    <span class="adver">
+                        <img src="static/picture/14.jpg">
+                    </span>
+                <div class="tit">
+                    <h5>遇见你</h5>
+                    <span>1分钟前</span>
+                </div>
+                <p class="des">里面妹子都比其他直播好看太多了，而且又能玩。</p>
+            </a>
+        </li>
+        <li>
+            <a class="clearfix down">
+                    <span class="adver">
+                        <img src="static/picture/15.jpg">
+                    </span>
+                <div class="tit">
+                    <h5>大侠饶命</h5>
+                    <span>2分钟前</span>
+                </div>
+                <p class="des">是时候来这约一炮了。</p>
+            </a>
+        </li>
+    </ul>
+</section>
+
+
+<div class="go_top">
+    <img src="static/picture/go_top.png">
+</div>
+<script>
+    $('li a').click(() => {
+        ad_obj.play("观看需要开通vip", "立即开通");
+    });
+    $('a.more').click(() => {
+        ad_obj.msg("开通vip后可以查看更多");
+    });
+
+</script>
+
+<!--下载提示--><!--下载提示--></body>
+</html>
