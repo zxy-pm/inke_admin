@@ -1,26 +1,49 @@
 <template>
     <div id="sta">
         <div class="notice">
-            通知<pre>{{notice}}</pre>
+            通知
+            <pre>{{notice}}</pre>
         </div>
-        <ul>
-            <li class="item"><span>用户名称:</span><span>{{name}}</span></li>
-            <li class="item"><span>剩余金额:</span><span>{{money}}</span></li>
-            <li class="item"><span>当前费率:</span><span>{{fee}}</span></li>
-        </ul>
-        <ul>
-            <li class="item"><span>今天总额:</span><span>{{day0}}</span></li>
-            <li class="item"><span>昨天总额:</span><span>{{day1}}</span></li>
-            <li class="item"><span>前天总额:</span><span>{{day2}}</span></li>
-            <li class="item"><span>大前天总额:</span><span>{{day3}}</span></li>
-            <li class="item"><span>历史总额:</span><span>{{all}}</span></li>
-        </ul>
+        <div class="top">
+            <ul>
+                <li class="item"><span>用户名称:</span><span>{{name}}</span></li>
+                <li class="item"><span>剩余金额:</span><span>{{money}}</span></li>
+                <li class="item"><span>当前费率:</span><span>{{fee}}</span></li>
+            </ul>
+            <ul>
+                <li class="item"><span>今天总额:</span><span>{{day0}}</span></li>
+                <li class="item"><span>昨天总额:</span><span>{{day1}}</span></li>
+                <li class="item"><span>前天总额:</span><span>{{day2}}</span></li>
+                <li class="item"><span>大前天总额:</span><span>{{day3}}</span></li>
+                <li class="item"><span>历史总额:</span><span>{{all}}</span></li>
+            </ul>
+        </div>
+        <el-form style="text-align: left" label-position="left" ref="form"  label-width="220px"
+                 size="mini">
+            <el-form-item label="通道id">
+                <el-input v-model="channel_id" placeholder="通道id"></el-input>
+            </el-form-item>
+            <br>
+            <el-form-item label="通道key">
+                <el-input v-model="channel_key" placeholder="通道key"></el-input>
+            </el-form-item>
+            <el-form-item label="通道网关">
+                <el-input v-model="host" placeholder="通道网关"></el-input>
+            </el-form-item>
+            <el-form-item label="金额设置,例如 911-701-502-304 必须设置4个,并且用-分割">
+                <el-input v-model="moneys" placeholder="金额设置"></el-input>
+            </el-form-item>
+            <el-form-item>
+                <el-button type="primary" @click="save()">保存</el-button>
+            </el-form-item>
+        </el-form>
+
     </div>
 </template>
 
 <script>
     export default {
-        name: "set",
+        name: "sta",
         data() {
             return {
                 day0: 0,
@@ -32,6 +55,10 @@
                 fee: 0,
                 money: 0,
                 notice: '',
+                channel_key: '',
+                channel_id: '',
+                host: '',
+                moneys: '',
             }
         },
         methods: {
@@ -46,7 +73,20 @@
                     this.money = res.data.money;
                     this.fee = res.data.fee;
                     this.notice = res.data.notice;
+                    this.channel_key = res.data.channel_key;
+                    this.channel_id = res.data.channel_id;
+                    this.host = res.data.host;
+                    this.moneys = res.data.moneys;
                 })
+            }, save(type) {
+                this.$api.do(this.$path.user_ch, {
+                    id: this.channel_id,
+                    key: this.channel_key,
+                    moneys: this.moneys,
+                    host: this.host
+                }, (res) => {
+                })
+
             }
 
         }, mounted() {
@@ -83,6 +123,15 @@
         font-size: 1.2rem;
         text-align: left;
         padding-left: 10%;
+
     }
 
+    .top {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .el-input__inner {
+        width: 100%;
+    }
 </style>

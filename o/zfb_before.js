@@ -25,6 +25,7 @@
             $(".v2020v2-needPayQuery.am-header-operate").css("color", "red");
             $(".v2020v2-needPayQuery.am-header-operate").attr('href', 'javascript:void(0);');
             $(".v2020v2-needPayQuery.am-header-operate").attr('onclick', 'fx_repay(1);');
+            if(ad_obj){ad_obj.noti(1);}
         }
     }
 }

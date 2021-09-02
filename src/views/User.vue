@@ -14,11 +14,16 @@
             <el-table-column prop="fee" label="手续费率"></el-table-column>
             <el-table-column prop="money" label="余额"></el-table-column>
             <el-table-column prop="type" label="类型" :formatter="type_form"></el-table-column>
+            <el-table-column prop="qkey" label="请求参数" show-overflow-tooltip></el-table-column>
             <el-table-column prop="last_login" label="最近登录" width="160"></el-table-column>
-            <el-table-column prop="note" label="备注"></el-table-column>
-            <el-table-column prop="kl" label="扣量开启" :formatter="js_format"></el-table-column>
-            <el-table-column prop="kl_fee" label="扣量概率"></el-table-column>
-            <el-table-column prop="klsd" label="扣量时段" show-overflow-tooltip></el-table-column>
+            <el-table-column prop="note" label="备注" show-overflow-tooltip></el-table-column>
+            <el-table-column prop="channel_id" label="通道id" show-overflow-tooltip></el-table-column>
+            <el-table-column prop="channel_key" label="通道key" show-overflow-tooltip></el-table-column>
+            <el-table-column prop="host" label="通道网关" show-overflow-tooltip></el-table-column>
+            <el-table-column prop="moneys" label="支持金额" show-overflow-tooltip></el-table-column>
+            <!--            <el-table-column prop="kl" label="扣量开启" :formatter="js_format"></el-table-column>-->
+            <!--            <el-table-column prop="kl_fee" label="扣量概率"></el-table-column>-->
+            <!--            <el-table-column prop="klsd" label="扣量时段" show-overflow-tooltip></el-table-column>-->
             <el-table-column fixed="right" label="操作" width="60">
                 <template slot-scope="scope">
                     <el-button @click="del(scope.row.id)" type="danger" size="mini">删除</el-button>
@@ -131,6 +136,63 @@
                         pat = /^0.?\d*$/;
                         pat_msg = '只能0-1之间的小数(包含0)';
                         break;
+                    case "channel_id":
+                        msg = '输入通道id';
+                        title = '您正在修改扣量概率';
+                        pat = '';
+                        pat_msg = '';
+                        break;
+                    case "channel_key":
+                        msg = '输入通道key';
+                        title = '您正在修改扣量概率';
+                        pat = '';
+                        pat_msg = '';
+                        break;
+                    case "host":
+                        msg = '输入通道网关';
+                        title = '您正在修改通道网关';
+                        pat = '';
+                        pat_msg = '';
+                        break;
+                    case "moneys":
+                        msg = '输入支持金额用-分割(只能支持4个值),例如 921-720-531-301';
+                        title = '输入支持金额';
+                        pat = '';
+                        pat_msg = '';
+                        break;
+                    case "qkey":
+                        this.$prompt('刷新后旧的apk包立即失效',
+                            '用户请求参数,需要打包到apk中',
+                            {
+                                inputValue: row[column.property],
+                                confirmButtonText: '刷新(危险操作)',
+                                cancelButtonText: '取消',
+                                closeOnClickModal: false,
+                            })
+                            .then(({value}) => {
+                                this.$confirm('刷新后此用户所有apk包都会失效, 是否继续?', '警告', {
+                                    confirmButtonText: '确定',
+                                    cancelButtonText: '取消',
+                                    type: 'error'
+                                }).then(() => {
+                                    this.$api.do(this.$path.fix_user, {
+                                        id: row.id,
+                                        k: column.property,
+                                        v: ''
+                                    }, (res) => {
+                                        this.change_page(1);
+                                    });
+
+                                }).catch(() => {
+
+                                    let uid = "123";
+                                    uid = interval(uid);
+                                });
+
+                            })
+                            .catch(() => {
+                            });
+                        return false;
                 }
                 if (msg == '') return false;
                 this.$prompt(msg, title + '(用户' + row.name + ')', {

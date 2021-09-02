@@ -24,5 +24,7 @@ const path = {
     'all_changes': '/admin/all_changes',
     'users1': '/admin/users1',
     'user_sta': '/admin/user_sta',
+    'user_ch': '/admin/user_ch',//修改用户给通道信息
+    'save_kl': '/admin/save_kl',//修改全局扣量状态
 }
 export default path
