@@ -30,7 +30,7 @@
             <el-form-item label="通道网关">
                 <el-input v-model="host" placeholder="通道网关"></el-input>
             </el-form-item>
-            <el-form-item label="金额设置,例如 911-701-502-304 必须设置4个,并且用-分割">
+            <el-form-item label="金额设置,例如 911-701-502-304 必须设置4个值,并且用-分割,金额要从大到小,并且相邻金额的差值要大于50">
                 <el-input v-model="moneys" placeholder="金额设置"></el-input>
             </el-form-item>
             <el-form-item>
