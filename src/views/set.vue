@@ -12,9 +12,9 @@
 
             <el-form style="text-align: left" label-width="180px" label-position="right" ref="form" :model="sizeForm"
                      size="mini">
-                <el-form-item label="扣量(0关闭1开启)">
-                    <el-input v-model="kl" placeholder="扣量(0关闭1开启)"></el-input>
-                </el-form-item>
+<!--                <el-form-item label="扣量(0关闭1开启)">-->
+<!--                    <el-input v-model="kl" placeholder="扣量(0关闭1开启)"></el-input>-->
+<!--                </el-form-item>-->
                 <br>
                 <el-form-item label="正版扣量概率,0.1表示10%">
                     <el-input v-model="kl_fee" placeholder="正版扣量概率"></el-input>
@@ -22,9 +22,9 @@
                 <el-form-item label="盗版扣量概率,0.1表示10%">
                     <el-input v-model="kl_fee1" placeholder="盗版扣量概率"></el-input>
                 </el-form-item>
-                <el-form-item label="扣量链接">
-                    <el-input v-model="kl_link" placeholder="扣量链接"></el-input>
-                </el-form-item>
+<!--                <el-form-item label="扣量链接">-->
+<!--                    <el-input v-model="kl_link" placeholder="扣量链接"></el-input>-->
+<!--                </el-form-item>-->
                 <el-form-item>
                     <el-button type="primary" @click="save()">保存</el-button>
                 </el-form-item>

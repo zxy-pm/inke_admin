@@ -10,7 +10,7 @@
                   :data="tableData" style="width: 100%">
             <el-table-column prop="id" label="id" width="80"></el-table-column>
             <el-table-column prop="uid" label="客户id" width="80"></el-table-column>
-            <el-table-column prop="trade_num" label="单号" width="180"></el-table-column>
+            <el-table-column prop="trade_no" label="单号" width="180"></el-table-column>
             <el-table-column prop="money" label="金额" width="180"></el-table-column>
             <el-table-column prop="type" v-if="false" label="来源"></el-table-column>
             <el-table-column prop="time" label="创建"></el-table-column>
