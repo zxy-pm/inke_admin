@@ -54,6 +54,8 @@
             }, sta_format(val) {
                 if (val.sta == 0) return '发起';
                 else if (val.sta == 1) return '成功';
+                else if (val.sta == -1) return '余额不足';
+                else if (val.sta == -2) return '风控';
             }, del(i) {
                 this.$confirm('删除后不可恢复, 是否继续?', '警告', {
                     confirmButtonText: '确定',
