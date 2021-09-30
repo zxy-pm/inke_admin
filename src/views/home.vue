@@ -12,14 +12,14 @@
                         <i class="el-icon-s-order"></i>
                         <span slot="title">我的订单</span>
                     </el-menu-item>
-<!--                    <el-menu-item index="/home/my_sta">-->
-<!--                        <i class="el-icon-s-order"></i>-->
-<!--                        <span slot="title">我的统计</span>-->
-<!--                    </el-menu-item>-->
-<!--                    <el-menu-item index="/home/channel">-->
-<!--                        <i class="el-icon-s-operation"></i>-->
-<!--                        <span slot="title">通道账号</span>-->
-<!--                    </el-menu-item>-->
+                    <el-menu-item index="/home/my_sta">
+                        <i class="el-icon-s-order"></i>
+                        <span slot="title">我的统计</span>
+                    </el-menu-item>
+                    <el-menu-item index="/home/channel">
+                        <i class="el-icon-s-operation"></i>
+                        <span slot="title">通道账号</span>
+                    </el-menu-item>
                     <el-menu-item index="/home/change">
                         <i class="el-icon-coin"></i>
                         <span slot="title">我的充值</span>

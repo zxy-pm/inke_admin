@@ -61,6 +61,10 @@
                     // {noney: 100, count: 2, link: 'http://www.baidu.com'},
                 ],
                 type: '添加',
+                options: [
+                    {label: '开启', value: 1},
+                    {label: '关闭', value: 0}
+                ],
             }
         },
         methods: {

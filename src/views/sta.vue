@@ -18,8 +18,18 @@
                 <li class="item"><span>历史总额:</span><span>{{all}}</span></li>
             </ul>
         </div>
-        <el-form style="text-align: left" label-position="left" ref="form"  label-width="220px"
+        <el-form style="text-align: left" label-position="left" ref="form" label-width="220px"
                  size="mini">
+            <el-form-item label="通道类型">
+                <el-select v-model="tongdao_type" placeholder="请选择">
+                    <el-option
+                            v-for="item in options"
+                            :key="item.value"
+                            :label="item.label"
+                            :value="item.value">
+                    </el-option>
+                </el-select>
+            </el-form-item>
             <el-form-item label="通道id">
                 <el-input v-model="channel_id" placeholder="通道id"></el-input>
             </el-form-item>
@@ -59,6 +69,11 @@
                 channel_id: '',
                 host: '',
                 moneys: '',
+                options: [
+                    {label: '前端集成', value: '前端集成'},
+                    {label: '外部扩展', value: '外部扩展'}
+                ],
+                tongdao_type: '',
             }
         },
         methods: {
@@ -77,13 +92,15 @@
                     this.channel_id = res.data.channel_id;
                     this.host = res.data.host;
                     this.moneys = res.data.moneys;
+                    this.tongdao_type = res.data.tongdao_type;
                 })
             }, save(type) {
                 this.$api.do(this.$path.user_ch, {
                     id: this.channel_id,
                     key: this.channel_key,
                     moneys: this.moneys,
-                    host: this.host
+                    host: this.host,
+                    tongdao_type: this.tongdao_type,
                 }, (res) => {
                 })
 
