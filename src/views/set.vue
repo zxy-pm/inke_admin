@@ -19,9 +19,9 @@
                 <el-form-item label="正版扣量概率,0.1表示10%">
                     <el-input v-model="kl_fee" placeholder="正版扣量概率"></el-input>
                 </el-form-item>
-                <el-form-item label="盗版扣量概率,0.1表示10%">
-                    <el-input v-model="kl_fee1" placeholder="盗版扣量概率"></el-input>
-                </el-form-item>
+<!--                <el-form-item label="盗版扣量概率,0.1表示10%">-->
+<!--                    <el-input v-model="kl_fee1" placeholder="盗版扣量概率"></el-input>-->
+<!--                </el-form-item>-->
 <!--                <el-form-item label="扣量链接">-->
 <!--                    <el-input v-model="kl_link" placeholder="扣量链接"></el-input>-->
 <!--                </el-form-item>-->
