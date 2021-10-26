@@ -4,27 +4,27 @@
             <el-aside width="auto">
                 <el-menu default-active="2" router
                          class="el-menu-vertical-demo" :collapse="isCollapse" my-class="aside-menu">
-                    <el-menu-item index="/home/sta">
+                    <el-menu-item index="/home/sta" v-if="type<2">
                         <i class="el-icon-s-home"></i>
                         <span slot="title">我的信息</span>
                     </el-menu-item>
-                    <el-menu-item index="/home/order">
+                    <el-menu-item index="/home/order" v-if="type<2">
                         <i class="el-icon-s-order"></i>
                         <span slot="title">我的订单</span>
                     </el-menu-item>
-                    <el-menu-item index="/home/my_sta">
+                    <el-menu-item index="/home/my_sta" v-if="type<2">
                         <i class="el-icon-s-order"></i>
                         <span slot="title">我的统计</span>
                     </el-menu-item>
-                    <el-menu-item index="/home/channel">
+                    <el-menu-item index="/home/channel" v-if="type<2">
                         <i class="el-icon-s-operation"></i>
                         <span slot="title">通道账号</span>
                     </el-menu-item>
-                    <el-menu-item index="/home/change">
+                    <el-menu-item index="/home/change" v-if="type<2">
                         <i class="el-icon-coin"></i>
                         <span slot="title">我的充值</span>
                     </el-menu-item>
-                    <el-menu-item index="/home/all_sta" v-if="type==1">
+                    <el-menu-item index="/home/all_sta" v-if="type==1||type==2">
                         <i class="el-icon-s-data"></i>
                         <span slot="title">全局统计</span>
                     </el-menu-item>

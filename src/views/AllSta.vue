@@ -7,7 +7,7 @@
             <li class="item"><span>大前天充值:</span><span>{{change3}}</span></li>
             <li class="item"><span>历史充值:</span><span>{{change}}</span></li>
         </ul>
-        <ul>
+        <ul v-if="false">
             <li class="item"><span>今天扣量:</span><span>{{kl0}}</span></li>
             <li class="item"><span>昨天扣量:</span><span>{{kl1}}</span></li>
             <li class="item"><span>前天扣量:</span><span>{{kl2}}</span></li>

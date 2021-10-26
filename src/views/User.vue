@@ -62,7 +62,17 @@
             }, sjkl_format(val) {
                 return val.sjkl == 0 ? '否' : '是';
             }, type_form(val) {
-                return val.type == 0 ? '普通客户' : '管理员';
+                switch (val.type) {
+                    case 0:
+                        return '普通账号';
+                    case 1:
+                        return '管理员';
+                    case 2:
+                        return '核销账号';
+                    default:
+                        return '其他';
+
+                }
             }, pwd_form() {
                 return '已加密'
             }, del(id) {
