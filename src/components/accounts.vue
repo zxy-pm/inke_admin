@@ -1,7 +1,7 @@
 <template>
     <div id="accounts">
         <div class="title">{{this.$parent.channel.name}}账号列表</div>
-        <el-table border :data="tableData" style="width: 100%" height="80vh">
+        <el-table border :data="tableData" style="width: 100%" height="80vh" @cell-click="cell_click">
             <el-table-column prop="id" label="id" :show-tooltip-when-overflow="true" :show-overflow-tooltip="true"
                              width="80">
             </el-table-column>
@@ -15,8 +15,8 @@
             </el-table-column>
             <el-table-column prop="max" label="最高限制"></el-table-column>
             <el-table-column prop="sta" label="开启状态" :formatter="format_sta"></el-table-column>
-<!--            <el-table-column prop="ck" label="登录账号ck" width="140" show-overflow-tooltip>-->
-<!--            </el-table-column>-->
+            <el-table-column prop="e2" label="异常次数" ></el-table-column>
+            <el-table-column prop="e3" label="异常内容" width="140" show-overflow-tooltip></el-table-column>
             <el-table-column fixed="right" label="操作" width="120">
                 <template slot-scope="scope">
                     <el-button @click="del(scope.row)" type="danger" size="mini">删除</el-button>
@@ -65,8 +65,18 @@
             }, format_sta(row, column, value, index) {
                 return value == 1 ? '开启' : `暂停`;
             }, format_num(row, column, value, index) {
+            }, cell_click(row, column, cell, event) {
+                if(column.property=='e3')
+                this.$prompt("提示", "错误信息", {
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                    inputValue: row[column.property],
+                }).then(({value}) => {
+                }).catch(() => {
+                });
             }
         }, mounted() {
+
 
         }
     }

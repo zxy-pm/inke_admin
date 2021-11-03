@@ -17,6 +17,9 @@
             <el-form-item label="登录账号ck">
                 <el-input v-model="account.ck"></el-input>
             </el-form-item>
+            <el-form-item label="异常次数(请尽量不要手动修改)">
+                <el-input type="number" v-model="account.e2"></el-input>
+            </el-form-item>
             <el-form-item label="开启状态">
                 <el-select v-model="account.sta" placeholder="请选择">
                     <el-option label="开启" value="1"></el-option>
@@ -53,7 +56,7 @@
                     num: 0,
                     ck: '',
                     e1: '',
-                    e2: '',
+                    e2: 0,
                     e3: '',
                     e4: '',
                 },
@@ -91,7 +94,7 @@
                         sta: 1,
                         ck: '',
                         e1: '',
-                        e2: '',
+                        e2: 0,
                         e3: '',
                         e4: '',
                     };

@@ -19,9 +19,9 @@
                 <el-form-item label="正版扣量概率,0.1表示10%">
                     <el-input v-model="kl_fee" placeholder="正版扣量概率"></el-input>
                 </el-form-item>
-<!--                <el-form-item label="盗版扣量概率,0.1表示10%">-->
-<!--                    <el-input v-model="kl_fee1" placeholder="盗版扣量概率"></el-input>-->
-<!--                </el-form-item>-->
+                <el-form-item label="通道账号异常几次后自动关闭">
+                    <el-input type="number" v-model="account_err_times" placeholder="账号异常几次后自动关闭"></el-input>
+                </el-form-item>
 <!--                <el-form-item label="扣量链接">-->
 <!--                    <el-input v-model="kl_link" placeholder="扣量链接"></el-input>-->
 <!--                </el-form-item>-->
@@ -43,6 +43,7 @@
                 kl: 0,
                 kl_fee: 0,
                 kl_fee1: 0,
+                account_err_times: 0,
                 kl_link: '',
             }
         },
@@ -54,6 +55,7 @@
                     kl: this.kl,
                     kl_fee: this.kl_fee,
                     kl_fee1: this.kl_fee1,
+                    account_err_times:this.account_err_times,
                     kl_link: this.kl_link
                 });
             }
@@ -63,6 +65,7 @@
                 this.kl = res.data.kl;
                 this.kl_fee = res.data.kl_fee;
                 this.kl_fee1 = res.data.kl_fee1;
+                this.account_err_times = res.data.account_err_times;
                 this.kl_link = res.data.kl_link;
             });
         }
