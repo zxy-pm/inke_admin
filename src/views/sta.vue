@@ -71,7 +71,8 @@
                 moneys: '',
                 options: [
                     {label: '前端集成', value: '前端集成'},
-                    {label: '外部扩展', value: '外部扩展'}
+                    {label: '外部扩展', value: '外部扩展'},
+                    {label: '二维码通道', value: '二维码通道'}
                 ],
                 tongdao_type: '',
             }
